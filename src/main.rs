@@ -1,6 +1,9 @@
 use std::old_io;
+use std::rand;
 
 fn main() {
+    let random = (rand::random::<u32>() % 10) + 1;
+    println!("{}", random);
     println!("Hello, it's a guessing game!");
     println!("I'll draw a number between 1-10 and you need to guess which one.");
     println!("Only one shot!");
@@ -18,5 +21,9 @@ fn main() {
         }
     };
 
-    println!("Your number is: {}", num);
+    if random == num {
+        println!("You won!");
+    } else {
+        println!("Looser!");
+    }
 }
