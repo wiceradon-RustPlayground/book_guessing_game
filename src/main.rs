@@ -11,7 +11,7 @@ fn main() {
     let input = old_io::stdin().read_line().ok().expect("You need to pass nummber");
 
     // It seems, that we need to remove newline before parsing (bug?)
-    let parsed_input: Result<u32, _> = input.trim_right_matches("\n").parse();
+    let parsed_input: Result<u32, _> = input.trim().parse();
 
     let num = match parsed_input {
         Ok(num) => num,
